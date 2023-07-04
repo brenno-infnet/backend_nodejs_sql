@@ -8,7 +8,7 @@ API desenvolvida por [Brenno Fernandes](https://github.com/tecbrenno) para a dis
     - MariaDB
 
 ## Utilização
-Instale o mariaDB, instale as dependências do projeto e em seguida utilize o arquivo de [rotas do postman](https://github.com/brenno-infnet/projeto_clockin/blob/master/postman/ClockIn.postman_collection.json)
+Instale o mariaDB, instale as dependências do projeto e em seguida utilize o arquivo de [rotas do postman]https://github.com/brenno-infnet/backend_nodejs_sql/blob/master/rotas_postaman/projeto_node_sql.postman_collection.json)
 
 ## Descrição das Rotas
 
