@@ -10,6 +10,9 @@ API desenvolvida por [Brenno Fernandes](https://github.com/tecbrenno) para a dis
 ## Utilização
 Instale o mariaDB, instale as dependências do projeto e em seguida utilize o arquivo de [rotas do postman]https://github.com/brenno-infnet/backend_nodejs_sql/blob/master/rotas_postaman/projeto_node_sql.postman_collection.json)
 
+# Nome do schema: dbfilantropia
+
+
 ## Descrição das Rotas
 
 1. Cadastro do aluno
