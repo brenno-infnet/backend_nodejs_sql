@@ -1,0 +1,369 @@
+{
+	"info": {
+		"_postman_id": "65d423ba-c676-41fb-8ac0-64cdc970fc52",
+		"name": "projeto_node_sql",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16560973"
+	},
+	"item": [
+		{
+			"name": "autenticação",
+			"item": [
+				{
+					"name": "/login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"brenno.fernandes\",\r\n    \"password\": \"123\",\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJicnVubm8uZmVybmFuZGVzIiwiaWF0IjoxNjg4NDEyNjY3fQ.G81NY4591hY81siB46o9PsVl6rrMraQJ4AxCAbukI5w\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:3333/login",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3333",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/logout",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"brenno.fernandes\",\r\n    \"password\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:3333/logout",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3333",
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "alunos",
+			"item": [
+				{
+					"name": "/alunos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"brenno.fernandes\",\r\n    \"password\": \"123\",\r\n    \"name\": \"Brunno dos Santos Fernandes\",\r\n    \"email\": \"brenno.fernandes@gmail.com\",\r\n    \"dt_birth\": \"1990-07-18\",\r\n    \"phone_number\": \"(92)98742-4567\",\r\n    \"country\": \"Brasil\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:3333/alunos",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3333",
+							"path": [
+								"alunos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/alunos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "jwt",
+							"jwt": [
+								{
+									"key": "addTokenTo",
+									"value": "queryParam",
+									"type": "string"
+								},
+								{
+									"key": "secret",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJicnVubm8uZmVybmFuZGVzIiwiaWF0IjoxNjg4NDEyNjY3fQ.G81NY4591hY81siB46o9PsVl6rrMraQJ4AxCAbukI5w",
+									"type": "string"
+								},
+								{
+									"key": "isSecretBase64Encoded",
+									"value": false,
+									"type": "boolean"
+								},
+								{
+									"key": "algorithm",
+									"value": "HS256",
+									"type": "string"
+								},
+								{
+									"key": "payload",
+									"value": "{}",
+									"type": "string"
+								},
+								{
+									"key": "headerPrefix",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "queryParamKey",
+									"value": "token",
+									"type": "string"
+								},
+								{
+									"key": "header",
+									"value": "{}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJicnVubm8uZmVybmFuZGVzIiwiaWF0IjoxNjg4NDEyNjY3fQ.G81NY4591hY81siB46o9PsVl6rrMraQJ4AxCAbukI5w\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:3333/alunos",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3333",
+							"path": [
+								"alunos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cursos",
+			"item": [
+				{
+					"name": "/cursos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJicnVubm8uZmVybmFuZGVzIiwiaWF0IjoxNjg4NDEyNjY3fQ.G81NY4591hY81siB46o9PsVl6rrMraQJ4AxCAbukI5w\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:3333/cursos",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3333",
+							"path": [
+								"cursos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/cursos",
+					"request": {
+						"auth": {
+							"type": "jwt",
+							"jwt": [
+								{
+									"key": "addTokenTo",
+									"value": "queryParam",
+									"type": "string"
+								},
+								{
+									"key": "isSecretBase64Encoded",
+									"value": false,
+									"type": "boolean"
+								},
+								{
+									"key": "secret",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJicmVubm8uZmVybmFuZGVzIiwiaWF0IjoxNjg4NDEyNTc4fQ.JEAY90ElZVe_89TqmG10ccGn1iVfAbYlwTPB7_lHiKI",
+									"type": "string"
+								},
+								{
+									"key": "algorithm",
+									"value": "HS256",
+									"type": "string"
+								},
+								{
+									"key": "payload",
+									"value": "{}",
+									"type": "string"
+								},
+								{
+									"key": "headerPrefix",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "queryParamKey",
+									"value": "token",
+									"type": "string"
+								},
+								{
+									"key": "header",
+									"value": "{}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Python 3\",\r\n    \"qtd_vagas\": 25,\r\n    \"dt_init_insc\": \"2023-07-01\",\r\n    \"dt_end_insc\": \"2023-07-05\",\r\n    \"dt_start_curso\": \"2023-07-10\",\r\n    \"dt_end_curso\": \"2023-07-30\",\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJicnVubm8uZmVybmFuZGVzIiwiaWF0IjoxNjg4NDEyNjY3fQ.G81NY4591hY81siB46o9PsVl6rrMraQJ4AxCAbukI5w\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:3333/cursos",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3333",
+							"path": [
+								"cursos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "matricula",
+			"item": [
+				{
+					"name": "inscricao/",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"curso_id\":1,\r\n    \"token\":  \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJicnVubm8uZmVybmFuZGVzIiwiaWF0IjoxNjg4NDEyNjY3fQ.G81NY4591hY81siB46o9PsVl6rrMraQJ4AxCAbukI5w\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:3333/inscricao",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3333",
+							"path": [
+								"inscricao"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "inscricao",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"aluno_id\": 3,\r\n    \"curso_id\": 1,\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJicnVubm8uZmVybmFuZGVzIiwiaWF0IjoxNjg4NDEyNjY3fQ.G81NY4591hY81siB46o9PsVl6rrMraQJ4AxCAbukI5w\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:3333/inscricao",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3333",
+							"path": [
+								"inscricao"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
